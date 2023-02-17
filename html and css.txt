@@ -1,0 +1,440 @@
+Karthik Madavanaru
+1.What is !important
+In CSS (Cascading Style Sheets), the !important declaration is used to give a particular style rule more weight than other conflicting rules. When !important is added to a style property, it overrides any previous styles applied to that element for that particular property.
+
+For example, if you have the following two conflicting CSS rules:
+
+css
+Copy code
+p {
+  color: red;
+}
+
+p {
+  color: blue !important;
+}
+The color of the p element will be blue because the second rule with the !important declaration takes precedence over the first rule.
+
+It's generally recommended to use !important sparingly and only when necessary, as overusing it can make your CSS harder to maintain and debug. It's a good practice to try to use more specific CSS selectors instead of relying on !important to solve styling conflicts.
+
+
+
+
+2.What is the box model?
+The box model is a fundamental concept in CSS that describes how elements on a web page are displayed as rectangular boxes. Each box has content, padding, borders, and margins, and the size of the box is determined by these four elements.
+
+The box model can be visualized as follows:
+
+lua
+Copy code
++---------------------------------------+
+|              Margin                   |
+|  +---------------------------------+  |
+|  |            Border             |  |
+|  |  +---------------------------+  |  |
+|  |  |          Padding          |  |  |
+|  |  |  +---------------------+  |  |  |
+|  |  |  |       Content       |  |  |  |
+|  |  |  |                     |  |  |  |
+|  |  |  |                     |  |  |  |
+|  |  |  +---------------------+  |  |  |
+|  |  |                           |  |  |
+|  |  +---------------------------+  |  |
+|  |                                 |  |
+|  +---------------------------------+  |
+|                                       |
++---------------------------------------+
+The content area is the actual content of the element, such as text or images. The padding is the space between the content and the border. The border is a line that surrounds the padding and content areas. The margin is the space between the border and the adjacent elements.
+
+In CSS, you can adjust the size and positioning of each of these elements using properties such as width, height, padding, border, and margin. Understanding the box model is important for creating layouts and positioning elements on a web page.
+
+
+
+
+
+
+
+3.what is the difference between position absolute, relative and fixed?
+
+In CSS, the position property is used to specify how an element is positioned on a web page. There are several possible values for the position property, but the most commonly used ones are absolute, relative, and fixed. The differences between these three values are as follows:
+
+position: relative;: When an element is positioned relatively, it is positioned relative to its normal position in the document flow. The element can be moved around with the top, bottom, left, and right properties, but it will not affect the positioning of other elements on the page. Elements that are positioned relatively can also be positioned on top of each other using a z-index.
+
+position: absolute;: When an element is positioned absolutely, it is removed from the normal document flow and positioned relative to the nearest positioned ancestor element. If there is no positioned ancestor, it is positioned relative to the initial containing block (usually the body element). This means that an absolutely positioned element can be positioned anywhere on the page, regardless of where other elements are located. It can be moved around with the top, bottom, left, and right properties. Elements that are positioned absolutely can also be positioned on top of each other using a z-index.
+
+position: fixed;: When an element is positioned fixed, it is removed from the normal document flow and positioned relative to the browser window. This means that a fixed element will stay in the same position on the screen even as the user scrolls the page. It can be moved around with the top, bottom, left, and right properties.
+
+In summary, position: relative positions an element relative to its normal position, position: absolute positions an element relative to its nearest positioned ancestor or the initial containing block, and position: fixed positions an element relative to the browser window.
+
+
+
+4.What is CSS positioning?
+
+
+
+CSS positioning is the process of specifying how elements should be positioned on a web page. It involves using the position property and other positioning-related CSS properties such as top, bottom, left, right, z-index, margin, and padding.
+
+There are several types of positioning in CSS, including:
+
+Static positioning: This is the default positioning for elements. Elements are positioned in the order they appear in the HTML document, with no special positioning applied.
+
+Relative positioning: This involves positioning an element relative to its normal position in the document flow, using the top, bottom, left, and right properties. The element still takes up its normal space in the document flow, but it can be moved around within that space.
+
+Absolute positioning: This involves positioning an element relative to its nearest positioned ancestor, using the top, bottom, left, and right properties. The element is removed from the normal document flow, and other elements can flow around it.
+
+Fixed positioning: This involves positioning an element relative to the browser window, using the top, bottom, left, and right properties. The element remains in the same position on the screen even as the user scrolls the page.
+
+Sticky positioning: This is a relatively new type of positioning that allows an element to remain in its normal position until it reaches a certain point on the page, at which point it becomes fixed.
+
+CSS positioning is important for creating layouts, positioning elements precisely, and controlling how elements overlap each other. It can be used to create fixed navigation bars, sticky headers, overlays, and other advanced UI components.
+
+
+
+5.the difference between display none and display hidden?
+
+In CSS, display: none; and display: hidden; are two different ways to hide elements on a web page, but they work in different ways and have different effects on the layout.
+
+display: none;: When an element is set to display: none;, it is completely removed from the document flow and is not visible on the page. This means that the element takes up no space and has no effect on the layout. Any child elements within the hidden element are also hidden. However, the element still exists in the HTML code and can be accessed through JavaScript or other means.
+
+visibility: hidden;: When an element is set to visibility: hidden;, it is not visible on the page, but it still takes up space in the layout. This means that the element is still part of the document flow and affects the layout of other elements around it. Any child elements within the hidden element are also hidden. The element is still present in the HTML code and can be accessed through JavaScript or other means.
+
+In summary, display: none; removes the element from the document flow and layout entirely, while visibility: hidden; hides the element but still reserves its space in the layout. Which one to use depends on the specific use case and desired effect. If you want to completely remove an element from the page and not leave a gap in the layout, use display: none;. If you want to hide an element but still have it occupy space in the layout, use visibility: hidden;
+
+
+
+6.Difference between flex and grid? Where to use it?
+Flexbox and CSS Grid are two popular layout systems in CSS that allow developers to create complex and responsive layouts on web pages. Here's how they differ and where to use them:
+
+Flexbox: Flexbox is a one-dimensional layout system, which means it works along a single axis (either row or column). It is ideal for creating flexible and dynamic layouts for items within a container. It can be used for a wide range of layout tasks, including aligning items within a container, creating responsive navigation menus, or building complex forms.
+
+CSS Grid: CSS Grid is a two-dimensional layout system, which means it allows developers to create both rows and columns on the web page. It is ideal for creating complex and structured layouts with multiple rows and columns, such as a multi-column blog layout or a complex dashboard. CSS Grid provides precise control over the positioning and sizing of elements within a grid, making it ideal for building complex and responsive layouts.
+
+Here are some general guidelines on where to use Flexbox and CSS Grid:
+
+Use Flexbox for one-dimensional layout tasks such as aligning items within a container, building responsive navigation menus, or creating flexible forms.
+Use CSS Grid for more complex two-dimensional layouts, such as building complex dashboard designs, creating multi-column layouts, or laying out page sections.
+In general, both Flexbox and CSS Grid are powerful layout systems that can help developers create responsive and dynamic layouts on web pages. The choice of which one to use depends on the specific layout task at hand, and in some cases, a combination of both systems may be needed to achieve the desired layout.
+
+
+7.What is BEM?
+
+
+BEM stands for Block, Element, Modifier. It is a popular naming convention for CSS classes that aims to make code more modular and maintainable. BEM was developed by the team at Yandex, a Russian search engine company, and has since been adopted by many developers worldwide.
+
+In BEM, every CSS class is broken down into three parts:
+
+Block: A high-level component that represents a standalone entity on the page, such as a navigation menu, a footer, or a form. Block names are typically written in all lowercase and separated by hyphens (e.g., menu, footer, form).
+
+Element: A part of a block that has a specific function or purpose, such as a button, a label, or an input field. Element names are written as the block name followed by two underscores and then the element name, all in lowercase (e.g., menu__item, footer__copyright, form__input).
+
+Modifier: A flag that is used to modify the appearance or behavior of a block or element, such as a disabled state, a highlighted state, or a size variation. Modifier names are written as the block or element name followed by two dashes and then the modifier name, all in lowercase (e.g., menu--horizontal, button--large, input--disabled).
+
+By using BEM naming conventions, developers can create more modular and maintainable CSS code that is easier to read, reuse, and update. The BEM methodology promotes a clear separation of concerns between blocks, elements, and modifiers, which can help reduce the risk of naming conflicts and make it easier to reason about the code.
+
+
+8.Karthik Madavanaru
+What is the z-index? What is the stacking context?
+In CSS, the z-index property is used to control the vertical stacking order of positioned elements that overlap with each other. It specifies the order in which elements should be displayed on the z-axis, where elements with a higher z-index value appear above elements with a lower z-index value.
+
+The z-index property applies only to positioned elements (position: absolute, position: relative, or position: fixed). By default, all positioned elements have a z-index value of 0, which means they stack in the order they appear in the HTML document. To change the stacking order, you can set a higher or lower z-index value.
+
+When working with z-index, it's important to understand the concept of a "stacking context". A stacking context is a group of elements that are stacked together based on their z-index values. Each stacking context has its own "z-axis", and the elements within it are stacked in the order of their z-index values relative to the other elements in the same context.
+
+There are several factors that can create a new stacking context, including:
+
+The root element of the document
+Elements with a position: fixed or position: absolute property
+Elements with a transform, filter, or opacity property set to anything other than none
+Elements with a mix-blend-mode property set to anything other than normal
+Elements with a isolation property set to isolate
+When a new stacking context is created, it forms a new "layer" in the z-axis, which can affect the stacking order of other elements on the page. Understanding stacking contexts and z-index values is important for creating complex layouts and managing the stacking order of overlapping elements on a web page.
+
+9.Explain briefly what happens when you hit a url? explain DNS lookup
+When you type a URL (Uniform Resource Locator) into a web browser, several things happen in the background before the webpage appears on your screen.
+
+DNS Lookup: The first step is the Domain Name System (DNS) lookup. The DNS is a distributed database that maps human-readable domain names to their corresponding IP addresses, which are used by computers to connect to each other over the internet. The web browser sends a request to the DNS server to resolve the domain name into an IP address. The DNS server checks its records and sends back the IP address of the web server that hosts the website.
+
+Establishing a Connection: Once the browser has the IP address of the web server, it establishes a connection with the server over the internet. This is done using the Transmission Control Protocol (TCP), which is a reliable, connection-oriented protocol that ensures the data is transmitted without errors and in the correct order.
+
+Sending a Request: After the connection is established, the browser sends an HTTP request to the server, specifying the URL and any other parameters that are needed. The server responds with an HTTP response that includes the HTML code for the webpage.
+
+Rendering the Webpage: Once the HTML code is received, the browser parses the code and constructs a Document Object Model (DOM) tree, which represents the structure of the webpage. The browser then uses the CSS (Cascading Style Sheets) and JavaScript code to apply styling and behavior to the webpage, and finally, renders the webpage on the screen.
+
+Overall, when you hit a URL, your web browser initiates a series of requests and responses with web servers, DNS servers, and other components of the internet infrastructure, all working together to deliver the webpage to your screen.
+
+
+10.What is a URLs full form? Explain what a url is and the four parts it consists of The protocol in use The hostname of the server The location of the file The arguments to the file
+
+URL stands for Uniform Resource Locator. A URL is a string of characters that is used to identify and locate a resource on the internet, such as a webpage, an image, or a video. A URL is made up of several parts, each of which provides information about the location and type of the resource being requested.
+
+The four main parts of a URL are:
+
+Protocol: The protocol is a set of rules and procedures that dictate how data is transmitted over the internet. The most common protocols used in URLs are HTTP (Hypertext Transfer Protocol) and HTTPS (HTTP Secure), which are used to transfer webpages and other resources over the internet securely. Other protocols, such as FTP (File Transfer Protocol) and SMTP (Simple Mail Transfer Protocol), are used for other types of data transfer.
+
+Hostname: The hostname is the name of the server where the resource is located. This can be a domain name, such as "example.com", or an IP address, such as "192.168.1.1". The hostname is usually preceded by "www." to indicate that it is a web server, but this is not always the case.
+
+Location: The location is the path to the file or resource being requested. This can include directories and subdirectories, as well as the name of the file itself. For example, "/blog/article.html" would be the location of an article on a blog.
+
+Arguments: The arguments are additional information that is passed to the server along with the request. This can include parameters that modify the behavior of the resource being requested, such as search terms or user preferences.
+
+Taken together, these four parts of a URL provide a complete address for the location of a resource on the internet, and allow web browsers and other applications to request and retrieve that resource as needed.
+
+
+11.What is HTTP protocol?
+
+HTTP stands for Hypertext Transfer Protocol, which is a protocol used for transferring data over the internet. It is the foundation of data communication for the World Wide Web and is used for retrieving webpages, images, videos, and other resources.
+
+HTTP works by using a client-server model, where a client (usually a web browser) sends a request to a server for a specific resource, and the server responds with the requested resource or an error message. The protocol defines the syntax and semantics of the messages that are exchanged between the client and the server, as well as the rules for handling various types of requests and responses.
+
+HTTP is a stateless protocol, which means that each request and response is independent of any previous request or response. This allows web servers to handle a large number of simultaneous requests from multiple clients without having to maintain a persistent connection with each client.
+
+Over the years, several versions of HTTP have been developed, with the latest version being HTTP/3. The newer versions of the protocol have added features such as improved security, better handling of large files, and more efficient data transfer.
+
+In summary, HTTP is a widely used protocol that enables the transfer of data over the internet, and it plays a critical role in the functioning of the World Wide Web.
+
+
+12.What is TCP Protocol?
+TCP (Transmission Control Protocol) is a protocol used for establishing and maintaining reliable, ordered, and error-checked connections between two applications over a network. It is one of the core protocols of the Internet Protocol (IP) suite, which is used for transmitting data over the internet.
+
+TCP works by breaking data into packets, which are transmitted over the network and reassembled by the recipient into the original data. The protocol also uses a three-way handshake process to establish a connection between two endpoints, and it implements flow control and congestion control mechanisms to ensure that data is transmitted efficiently and without loss.
+
+TCP provides reliable, connection-oriented transport of data between applications, which means that data is guaranteed to arrive in the order it was sent and that any lost or corrupted packets will be retransmitted. This makes it a popular choice for applications that require a high level of data reliability, such as web browsing, file transfers, and email.
+
+In summary, TCP is a protocol used for reliable, ordered, and error-checked transmission of data over a network, and it is one of the key building blocks of the internet.
+
+
+13.explain all the different HTTP methods?
+There are several HTTP methods, also known as HTTP verbs, that are used to indicate the desired action to be performed on a resource. The most commonly used HTTP methods are:
+
+GET: The GET method is used to retrieve a resource from a server. It is the most commonly used HTTP method and is used by web browsers to retrieve webpages, images, and other resources. The GET method is an idempotent operation, which means that multiple requests to the same resource will always return the same result.
+
+POST: The POST method is used to submit data to a server, typically as part of a form submission or other user input. The POST method is not idempotent, which means that multiple requests to the same resource can result in different outcomes.
+
+PUT: The PUT method is used to update or replace a resource on a server. It is typically used to update an existing resource with new data. The PUT method is idempotent, which means that multiple requests to the same resource will have the same effect as a single request.
+
+DELETE: The DELETE method is used to delete a resource from a server. It is typically used to remove an existing resource from the server. The DELETE method is also idempotent, which means that multiple requests to the same resource will have the same effect as a single request.
+
+HEAD: The HEAD method is similar to the GET method, but it only retrieves the headers for a resource, rather than the full resource itself. This can be useful for checking the status of a resource, or for retrieving metadata about a resource without actually downloading the resource itself.
+
+OPTIONS: The OPTIONS method is used to retrieve information about the communication options available for a resource. This can include information about the allowed HTTP methods, authentication requirements, and other details about the resource.
+
+PATCH: The PATCH method is used to make partial updates to a resource on a server. It is similar to the PUT method, but it is used to update only a portion of the resource, rather than replacing the entire resource.
+
+In summary, there are several HTTP methods that can be used to interact with resources on a server, and each method has a specific purpose and behavior. Understanding the differences between these methods is important for building web applications and for understanding how data is transmitted over the internet.
+
+
+
+14.What are HTTP headers?
+
+HTTP headers are additional pieces of information that are sent along with an HTTP request or response. They are used to provide more information about the request or response, or to modify the behavior of the client or server.
+
+HTTP headers are made up of a name-value pair, with the name and value separated by a colon. They are added to the request or response as a separate line in the message header, and are transmitted as plain text.
+
+There are several types of HTTP headers, including:
+
+Request headers: These headers are sent by the client to the server as part of an HTTP request. They provide information about the request, such as the type of request, the language and encoding of the request, and any additional data the server may need to process the request.
+
+Response headers: These headers are sent by the server in response to an HTTP request. They provide information about the response, such as the content type, encoding, and length of the response, as well as any additional data the client may need to process the response.
+
+Entity headers: These headers are used to provide information about the content of the message, such as the content type, encoding, and length.
+
+HTTP headers can be used for a variety of purposes, including authentication, caching, redirection, and compression. They are an important part of the HTTP protocol and are used extensively in web development and web services.
+
+
+15.What are some HTTP response codes? what does it mean? 2xx, 3xx, 4xx, 5xx
+
+HTTP response codes are three-digit status codes that are returned by a server in response to an HTTP request. These codes provide information about the status of the request and the response, and are used by the client to determine how to handle the response.
+
+Here are some common HTTP response codes:
+
+2xx (Successful): These codes indicate that the request was successfully processed by the server. Examples include:
+
+200 OK: The request was successful and the response contains the requested data.
+201 Created: The request was successful and a new resource was created on the server.
+204 No Content: The request was successful, but there is no data to return.
+3xx (Redirection): These codes indicate that the client must take additional action to complete the request. Examples include:
+
+301 Moved Permanently: The requested resource has been permanently moved to a new URL.
+302 Found: The requested resource has been temporarily moved to a new URL.
+304 Not Modified: The requested resource has not been modified since the last request.
+4xx (Client Error): These codes indicate that the client made a mistake in the request, and the server could not process the request. Examples include:
+
+400 Bad Request: The request was malformed and could not be processed.
+401 Unauthorized: The request requires authentication and the client did not provide valid credentials.
+404 Not Found: The requested resource was not found on the server.
+5xx (Server Error): These codes indicate that the server encountered an error while processing the request. Examples include:
+
+500 Internal Server Error: An unexpected error occurred on the server.
+503 Service Unavailable: The server is currently unable to handle the request due to maintenance or overload.
+In summary, HTTP response codes provide important information about the status of an HTTP request and response, and are used by clients to determine how to handle the response. By understanding these codes, developers can more effectively troubleshoot issues and optimize their applications for better performance.
+
+
+16.What does cache control on http response mean?
+Cache-Control is an HTTP header that is used to control caching in web browsers and proxy servers. The header is included in the HTTP response and provides instructions to the client on how long the response can be cached and under what conditions.
+
+The Cache-Control header includes one or more directives that specify the caching policy for the response. Some common directives include:
+
+max-age: This directive specifies the maximum amount of time in seconds that the response can be cached.
+
+no-cache: This directive instructs the client to revalidate the response with the server before using a cached copy.
+
+no-store: This directive instructs the client not to cache the response at all.
+
+must-revalidate: This directive instructs the client to revalidate the response with the server before using a cached copy that has expired.
+
+public: This directive indicates that the response can be cached by any client, including proxy servers.
+
+private: This directive indicates that the response can be cached by the client, but not by proxy servers.
+
+The Cache-Control header is important because it allows developers to control how long a response is cached by the browser or proxy server. This can help to improve performance by reducing the number of requests made to the server and reducing the amount of data transferred. It can also be used to improve security by ensuring that sensitive data is not cached on client devices or on proxy servers.
+
+
+
+17.What is long polling?
+
+
+Long polling is a technique used in web development to push data from the server to the client in real-time. It works by keeping a request open on the server for a longer period of time, and only returning a response when new data is available to be sent.
+
+With long polling, a client sends a request to the server and the server does not immediately respond. Instead, the server waits until new data becomes available or a timeout period is reached. When new data becomes available, the server sends a response with the new data to the client, and the client immediately sends a new request to continue the process.
+
+This technique can be used to create real-time applications such as chat rooms, notifications, and live updates. Long polling is useful in cases where real-time updates are required, but where continuous polling would result in too much network traffic or processing overhead.
+
+One disadvantage of long polling is that it can result in higher resource usage on the server side, as each open request requires a thread or process to be kept alive on the server until a response is sent. In recent years, technologies such as WebSockets and Server-Sent Events have become popular as alternatives to long polling for real-time web applications.
+
+18.How is web sockets different from HTTP?
+
+WebSockets are different from HTTP in several ways:
+
+Connection: WebSockets provide a persistent, bi-directional connection between the client and server, whereas HTTP uses a request-response model where the connection is closed after each request.
+
+Data transfer: With WebSockets, data can be sent in both directions at any time, while with HTTP, data can only be sent in response to a request from the client.
+
+Protocol: WebSockets have their own protocol, while HTTP uses the request-response protocol.
+
+Overhead: WebSockets have less overhead than HTTP since they don't need to send headers with each message.
+
+Performance: WebSockets are generally faster than HTTP for real-time, low-latency applications since they don't need to establish a new connection for each message.
+
+Compatibility: WebSockets may not be supported by all web browsers, while HTTP is a well-established standard that is widely supported.
+
+Overall, WebSockets are more suitable for real-time, low-latency applications that require frequent updates, while HTTP is better suited for traditional web applications where data is requested and sent periodically.
+
+
+19.What is HTTPS?
+
+HTTPS (Hypertext Transfer Protocol Secure) is a protocol for secure communication over the internet. It is the secure version of HTTP, the protocol used for transferring data over the internet. HTTPS ensures that the communication between the client (usually a web browser) and the server is encrypted and secure.
+
+HTTPS works by encrypting the data sent between the client and server using SSL/TLS (Secure Sockets Layer/Transport Layer Security) protocols. SSL/TLS provide a secure communication channel by encrypting data and providing authentication of the server to ensure that the client is communicating with the intended server.
+
+When a user visits a website that uses HTTPS, their web browser establishes a secure connection with the web server using SSL/TLS. The web server presents its SSL/TLS certificate to the client, which is used to establish a secure connection. The web browser then encrypts all data sent between the client and server using SSL/TLS, including sensitive information such as login credentials, credit card information, and other personal information.
+
+The use of HTTPS is important for protecting user data and ensuring the integrity of web content. It helps to prevent eavesdropping, data tampering, and other security threats that can compromise sensitive data. Many web browsers now display warnings when users attempt to access websites that do not use HTTPS, and some search engines now rank HTTPS sites higher in search results to encourage their use.
+
+
+20.What is Cross Origin Resource Sharing? ( CORS ) Why do we need it?
+
+Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers that allows web applications to make requests to a different domain than the one from which the original web page was served. CORS allows web applications to access resources on other domains, such as APIs, images, fonts, and scripts.
+
+CORS is necessary because web browsers have the same-origin policy, which prevents web pages from making requests to a different domain than the one from which the web page was served. This is done to prevent cross-site scripting attacks, where an attacker injects malicious scripts into a web page to steal sensitive information or perform unauthorized actions on behalf of the user.
+
+To enable cross-domain requests, the server needs to include the appropriate CORS headers in the response to the client's request. The CORS headers tell the browser that the server allows requests from different domains and specifies which domains are allowed to access the resources.
+
+There are two types of CORS requests: simple and preflighted. Simple CORS requests are requests that meet certain criteria, such as using GET or POST methods and not including custom headers. Preflighted CORS requests are requests that don't meet the criteria for a simple request, such as requests with custom headers or non-standard HTTP methods. Preflighted requests are used to ensure that the server allows the requested method and headers before the actual request is made.
+
+In summary, CORS is a security feature that allows web applications to access resources on other domains while maintaining the same-origin policy enforced by web browsers. It is important for enabling the use of third-party APIs, images, fonts, and other resources in web applications.
+
+21.What does Access-Control-Allow-Origin header do?
+
+The Access-Control-Allow-Origin header is a CORS (Cross-Origin Resource Sharing) header that is used to specify which domains are allowed to access a resource on a web server.
+
+When a web application makes a cross-domain request to a server, the browser first checks the response for the Access-Control-Allow-Origin header. This header specifies which domains are allowed to access the resource. If the domain of the requesting application matches the domain(s) specified in the header, then the browser will allow the application to access the resource. If the domain is not allowed, then the browser will block the request and return an error.
+
+For example, if the Access-Control-Allow-Origin header is set to "*" (allowing any domain to access the resource), any web application can make a cross-domain request to the server and retrieve the resource. If the header is set to a specific domain (e.g. "https://example.com"), only applications hosted on that domain will be allowed to access the resource.
+
+It is important to note that the Access-Control-Allow-Origin header is a server-side configuration and should be set by the server administrator. By specifying which domains are allowed to access a resource, the Access-Control-Allow-Origin header helps prevent cross-site scripting (XSS) attacks and other security threats that can compromise sensitive data.
+
+22.What is clickjacking? How do you fix it?
+
+Clickjacking, also known as a "UI redress attack" or a "user-interface (UI) spoofing attack," is a type of attack in which an attacker tricks a user into clicking on a button or link on a web page that is actually invisible or hidden beneath a transparent layer. The attacker overlays a visible element, such as a button or an image, over the hidden button or link, making
+
+
+23.What are some performance metrics for your website?
+
+There are several performance metrics that can be used to evaluate the performance of a website. Here are a few of the most commonly used metrics:
+
+Page load time: The time it takes for a web page to fully load in the user's browser.
+
+Time to first byte (TTFB): The time it takes for the server to send the first byte of data to the user's browser.
+
+First contentful paint (FCP): The time it takes for the first element on the page to become visible.
+
+Time to interactive (TTI): The time it takes for the page to become fully interactive, meaning the user can interact with all elements on the page.
+
+Total page size: The total size of all assets, including HTML, CSS, JavaScript, images, and other files, that need to be downloaded to render the page.
+
+Number of requests: The total number of requests made by the browser to render the page, including requests for all assets and resources.
+
+Render-blocking resources: Resources that prevent the browser from rendering the page until they have been downloaded and processed, such as JavaScript and CSS files.
+
+Mobile performance metrics: Mobile-specific metrics such as time to first mobile paint (TTFMP), first input delay (FID), and cumulative layout shift (CLS).
+
+By monitoring these metrics and optimizing your website accordingly, you can improve the performance and user experience of your website.
+
+
+24.What does the following term mean?
+
+Time to first byte,
+Page load time
+
+"Time to first byte" (TTFB) is the amount of time it takes for a user's browser to receive the first byte of data from a web server after making a request for a web page. It is an important performance metric because it provides insight into the responsiveness of a web server and can help identify issues that may be slowing down the delivery of content to users.
+
+"Page load time" refers to the amount of time it takes for a web page to fully load in a user's browser, including all images, scripts, stylesheets, and other resources. This metric is important because it directly affects user experience and can impact user engagement, bounce rates, and search engine rankings. By reducing page load time, you can improve the overall performance and usability of your website.
+
+
+25.What do CDN or Content Delivery Networks do? When do you need a CDN?
+
+A Content Delivery Network (CDN) is a network of servers distributed around the world that work together to deliver web content to users more quickly and efficiently. When a user requests content from a website, the CDN selects the server closest to the user to deliver the content, which can significantly reduce the time it takes for the content to load in the user's browser.
+
+CDNs are especially useful for websites that have a large global audience or that serve a large amount of media content, such as images or videos. They can help to reduce page load times, improve the user experience, and reduce the load on the origin server. By using a CDN, website owners can also benefit from additional features such as DDoS protection, improved security, and better analytics.
+
+In general, you may want to consider using a CDN if:
+
+Your website has a large global audience
+Your website serves a lot of static content, such as images or videos
+Your website experiences high traffic volumes
+Your website is susceptible to DDoS attacks or other security threats
+You want to improve the performance and user experience of your website
+
+
+26.What is the difference between Client Side Renderring and Server Side Renderring?
+
+Client-side rendering (CSR) and server-side rendering (SSR) are two different approaches to rendering web pages.
+
+In client-side rendering, the page is rendered in the user's browser using JavaScript, typically in combination with a client-side framework such as React, Angular, or Vue. When the user requests a page, the server sends a minimal HTML file and the necessary JavaScript code. The JavaScript code then executes in the browser and requests the necessary data from the server to render the page. The advantage of this approach is that it can lead to a faster initial page load time and can provide a more responsive user interface. However, it can also lead to slower subsequent page loads and may not be as SEO-friendly.
+
+In server-side rendering, the page is rendered on the server and then sent to the user's browser as a fully-formed HTML file. This approach can provide faster subsequent page loads, as the HTML is already fully formed and does not require additional JavaScript to execute in the browser. It can also be more SEO-friendly, as search engines can more easily crawl and index the page. However, it can result in a slower initial page load time and can be less responsive for the user.
+
+In summary, the main difference between client-side rendering and server-side rendering is where the rendering of the web page occurs. Client-side rendering occurs in the user's browser, while server-side rendering occurs on the server before the page is sent to the user's browser. The choice of which approach to use depends on the specific needs of the website and the priorities of the website owner.
+
+
+
+27.What is the difference between Preloading and Prefetching resources?
+
+Preloading and prefetching are two techniques used to improve website performance by loading resources ahead of time. The main difference between preloading and prefetching is the timing and priority of the loading process.
+
+Preloading involves loading resources that are necessary for the current page before the user needs them. This means that these resources are loaded as soon as possible, even before the user has requested them. Preloading is typically used for resources that are critical to the page, such as fonts or scripts, that need to be available as soon as possible.
+
+Prefetching, on the other hand, involves loading resources that may be needed in the future, but are not required for the current page. Prefetching is typically used for resources that are not critical to the current page, such as images or videos, that can be loaded in the background while the user is browsing the current page. Prefetching can help to improve the user experience by reducing the latency and perceived load time when the user navigates to a new page that requires those resources.
+
+In summary, the main difference between preloading and prefetching is the timing and priority of the loading process. Preloading is used to load critical resources that are necessary for the current page, while prefetching is used to load resources that may be needed in the future, but are not required for the current page. Both techniques can help to improve website performance and user experience.
+
+
+28.What are service workers?
+
+Service workers are a type of web worker that runs in the background of a web page and acts as a proxy between the browser and the network. Service workers allow web developers to cache data, pre-fetch resources, and perform other operations that improve the performance and reliability of web applications.
+
+Service workers are written in JavaScript and can be installed on the client side, independent of the website or web application. Once installed, service workers can intercept network requests and respond with cached data or other responses that are generated by the service worker. This can help to speed up the loading of web pages, even when the network connection is slow or unreliable.
+
+One of the key benefits of service workers is that they can provide offline support for web applications. By caching data and resources, service workers can allow web applications to continue functioning even when the user is offline or has a poor network connection. This can help to improve the reliability and user experience of web applications.
+
+Service workers are supported by most modern web browsers, including Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari. However, they require a secure context (HTTPS or localhost) to function due to security concerns.
